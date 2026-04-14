@@ -6,9 +6,29 @@ body {
 }
 
 .header {
-  padding: 12px;
+  padding: 12px 20px;
   background: #1a1a1a;
   border-bottom: 1px solid #2a2a2a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.header-right {
+  color: #0e639c;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.header-right:hover {
+  color: #66b3ff;
 }
 
 .explorer {
@@ -18,10 +38,11 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 150px;
+  width: 135px; /* sizechange */
   background: #181818;
   border-right: 1px solid #2a2a2a;
   padding: 10px;
+  overflow: hidden;
 }
 
 .tree-item {
@@ -37,7 +58,7 @@ body {
 .content {
   flex: 1;
   padding: 20px;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 /* Gooey-style cards */

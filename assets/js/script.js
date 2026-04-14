@@ -118,7 +118,7 @@ function openPDF(year, term, subject, midLabel) {
 
     document.getElementById("content").innerHTML = 
     `
-    <iframe src="${path}" style="width:100%; height:90vh; border:none;"></iframe>
+    <iframe src="${path}" style="width:100%; height:89vh; border:none;"></iframe>
     `;
 }
 
