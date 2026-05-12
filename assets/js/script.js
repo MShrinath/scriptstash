@@ -109,10 +109,18 @@ function showSubjects(year, term) {
 
 function openPDF(year, term, subject, midLabel) {
     const subjectKey = subject
+        .trim()
         .replace(/\s+/g, '_')
+        .replace(/_+/g, '_')
         .toUpperCase();
 
-    const filename = `${year}_${term}_${subjectKey}${midLabel}.pdf`;
+    const prefix = `${year}_${term}_`.toUpperCase();
+    const cleanSubject = subjectKey.startsWith(prefix)
+        ? subjectKey.slice(prefix.length)
+        : subjectKey;
+    const cleanMidLabel = midLabel.replace(/^_+/, '');
+
+    const filename = `${year}_${term}_${cleanSubject}_${cleanMidLabel}.pdf`;
     // const path = `assets/${year}/${term}/${filename}`;
     const path = `assets/pdf.pdf`;  // test
 
