@@ -1,17 +1,32 @@
 const archiveData = [
-    { year: '2023-2024', term: 'Even', subject: '2023-2024_Even', courseCode: '32708', _MID1: 'M1', _MID2: 'M2' },
-    
-    { year: '2023-2024', term: 'Odd', subject: '2023-2024_Odd', courseCode: '32708', _MID1: 'M1', _MID2: 'M2' },
-    
-    { year: '2023-2024', term: 'SummerTerm', subject: '2023-2024_SummerTerm', courseCode: '32708', _MID1: 'M1', _MID2: 'M2' },
+    { year: '2023-2024', term: 'Odd', subject: 'Adaptive Software Engineering', courseCode: '22CI2001', _MID1: '92114746', _MID2: '92879732' },
+    { year: '2023-2024', term: 'Odd', subject: 'Advanced Object Oriented Programming', courseCode: '22CS2103A', _MID1: '92220693', _MID2: '92352691' },
+    { year: '2023-2024', term: 'Odd', subject: 'Database Management Systems', courseCode: '22AD2102R', _MID1: '92431183', _MID2: '92625352' },
+    { year: '2023-2024', term: 'Odd', subject: 'Mathematical Programming', courseCode: '22MT2004', _MID1: '92163050', _MID2: '92402645' },
+    { year: '2023-2024', term: 'Odd', subject: 'Processors & Controllers', courseCode: '22EC2106', _MID1: '92226772', _MID2: '94482780' },
 
-    { year: '2024-2025', term: 'Even', subject: '2024-2025_Even', courseCode: '32708', _MID1: 'M1', _MID2: 'M2' },
+    { year: '2023-2024', term: 'Even', subject: 'Automata Theory and Formal Languages', courseCode: '22CS2002R', _MID1: '567075244979774', _MID2: '98409135' },
+    { year: '2023-2024', term: 'Even', subject: 'Introduction to Blockchain and Crypto Currencies', courseCode: '22CS2233', _MID1: '567075150279440', _MID2: '98382126' },
+    { year: '2023-2024', term: 'Even', subject: 'Operating Systems', courseCode: '22CS2104R', _MID1: '567075153879393', _MID2: '98313692' },
+    { year: '2023-2024', term: 'Even', subject: 'Probability Statistics & Queueing Theory', courseCode: '22MT2005', _MID1: '567075146579320', _MID2: '98216753' },
 
-    { year: '2024-2025', term: 'Odd', subject: '2024-2025_Odd', courseCode: '32708', _MID1: 'M1', _MID2: 'M2' },
+    { year: '2023-2024', term: 'SummerTerm', subject: 'Compiler Design', courseCode: '22CS2235F', _MID1: '888138165', _MID2: '888141353' },
+
+
+    { year: '2024-2025', term: 'Odd', subject: 'Applied Physics', courseCode: '22PH4102', _MID1: '567075983394554', _MID2: '567075983398814' },
+    { year: '2024-2025', term: 'Odd', subject: 'Network & Infrastructure Security', courseCode: '22CSB3202', _MID1: '2222171757', _MID2: '567075592199297' },
+    { year: '2024-2025', term: 'Odd', subject: 'UX Design', courseCode: '22CS2221F', _MID1: '567075588294621', _MID2: '567075588298945' },
     
-    { year: '2025-2026', term: 'Even', subject: '2025-2026_Even', courseCode: '32708', _MID1: 'M1', _MID2: 'M2' },
-    
-    { year: '2025-2026', term: 'Odd', subject: '2025-2026_Odd', courseCode: '32708', _MID1: 'M1', _MID2: 'M2' }
+    { year: '2024-2025', term: 'Even', subject: 'Parallel & Distributed Computing', courseCode: '22CS4106', _MID1: '5670764950107546', _MID2: '5670764950109710' },
+
+
+    { year: '2025-2026', term: 'Odd', subject: 'Engineering Chemistry', courseCode: '22CY1001', _MID1: '5670771839127326', _MID2: '5670771839130784' },
+    { year: '2025-2026', term: 'Odd', subject: 'Programming for Smart Contracts', courseCode: '22CSB3406M', _MID1: '5670771835127404', _MID2: '5670771835130742' },
+    { year: '2025-2026', term: 'Odd', subject: 'Security Governance and Management', courseCode: '22CSB3510', _MID1: '5670771836127485', _MID2: '5670771836130860' },
+    { year: '2025-2026', term: 'Odd', subject: 'Universal Human Values and Professional Ethics', courseCode: '22UC0010', _MID1: '5670771491127525', _MID2: '5670771491130945' },
+
+    { year: '2025-2026', term: 'Even', subject: 'Cost Accounting', courseCode: 'OECM0002', _MID1: '5670777459141174', _MID2: '5670777459147790' },
+    { year: '2025-2026', term: 'Even', subject: 'Decision Accounting', courseCode: 'OECM0003', _MID1: '5670777602141223', _MID2: "5670777602147721" },
 ];
 
 const sidebar = document.getElementById("sidebar");
@@ -121,8 +136,8 @@ function openPDF(year, term, subject, midLabel) {
     const cleanMidLabel = midLabel.replace(/^_+/, '');
 
     const filename = `${year}_${term}_${cleanSubject}_${cleanMidLabel}.pdf`;
-    // const path = `assets/${year}/${term}/${filename}`;
-    const path = `assets/pdf.pdf`;  // test
+    const path = `assets/${year}/${term}/${filename}`;
+    // const path = `assets/pdf.pdf`;  // test
 
     document.getElementById("content").innerHTML = 
     `
